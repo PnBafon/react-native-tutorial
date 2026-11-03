@@ -1,9 +1,10 @@
 {
   "name": "starting",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "expo-router/entry",
   "dependencies": {
     "expo": "~58.0.22",
+    "expo-router": "~58.0.29",
     "expo-status-bar": "~58.0.4",
     "react": "19.3.0",
     "react-native": "0.88.1"
