@@ -5,14 +5,20 @@ import { Link } from "expo-router";
 
 // themed components
 import ThemedView from "../components/ThemedView";
+import ThemedLogo from "../components/ThemedLogo";
+import Spacer from "../components/Spacer";
 const HOME = () => {
   return (
     <>
       <ThemedView style={styles.container}>
-        <Image source={Logo} style={styles.img} />
-        <Text style={[styles.title, { marginBottom: 10 }]}>
+       
+       <ThemedLogo />
+
+
+        <Text style={[styles.title]}>
           Hello Bafon Precious
         </Text>
+        <Spacer height={3}/>
         <Text>Reading the List of Books</Text>
         
        <View style={{flex:'row',}}>
