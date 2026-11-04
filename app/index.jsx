@@ -7,19 +7,22 @@ import { Link } from "expo-router";
 import ThemedView from "../components/ThemedView";
 import ThemedLogo from "../components/ThemedLogo";
 import Spacer from "../components/Spacer";
+import ThemedText from "../components/ThemedText";
 const HOME = () => {
   return (
     <>
       <ThemedView style={styles.container}>
        
        <ThemedLogo />
+        <Spacer/>
 
+        <ThemedText style={styles.title} title='true'>
+            Hello, Bafon Precious
+        </ThemedText>
 
-        <Text style={[styles.title]}>
-          Hello Bafon Precious
-        </Text>
         <Spacer height={3}/>
-        <Text>Reading the List of Books</Text>
+       
+       <ThemedText>Reading the Book List</ThemedText>
         
        <View style={{flex:'row',}}>
          <Link href="/about" style={styles.link}>
