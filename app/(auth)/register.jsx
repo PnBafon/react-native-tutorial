@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text } from "react-native";
 // themed components
 import ThemedView from "../../components/ThemedView";
 import ThemedLogo from "../../components/ThemedLogo";
@@ -20,7 +20,7 @@ const login = () => {
       </ThemedText>
 
           <ThemedButton onPress={handleSubmit}>
-        <Text style={{ color: "#f2f2f2" }}>Login</Text>
+        <Text style={{ color: "#f2f2f2" }}>Register</Text>
     </ThemedButton>
 
       <Spacer height={100} />

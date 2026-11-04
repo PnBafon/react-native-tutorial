@@ -28,8 +28,8 @@ const HOME = () => {
          <Link href="/login" style={styles.link}>
           <ThemedText>Login</ThemedText>
         </Link>
-        <Link href="/register" style={styles.link}>
-          <ThemedText>Register</ThemedText>
+        <Link href="/profile" style={styles.link}>
+          <ThemedText>Your Profile</ThemedText>
         </Link>
        </View>
       </ThemedView>
