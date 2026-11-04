@@ -3,7 +3,7 @@ import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import { StyleSheet } from "react-native";
 
-const profile = () => {
+const CreateBooks = () => {
   return <ThemedView style={styles.container}>
     <Spacer/>
     <ThemedText style={styles.title}>Create Books</ThemedText>
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 
 })
-export default profile;
+export default CreateBooks;

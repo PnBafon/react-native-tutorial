@@ -24,14 +24,12 @@ const HOME = () => {
        
        <ThemedText>Reading the Book List</ThemedText>
         
-       <View style={{flex:'row',}}>
          <Link href="/login" style={styles.link}>
           <ThemedText>Login</ThemedText>
         </Link>
         <Link href="/profile" style={styles.link}>
           <ThemedText>Your Profile</ThemedText>
         </Link>
-       </View>
       </ThemedView>
     </>
   );
