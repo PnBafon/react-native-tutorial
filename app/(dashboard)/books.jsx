@@ -4,7 +4,7 @@ import Spacer from "../../components/Spacer";
 import { StyleSheet } from "react-native";
 
 const profile = () => {
-  return <ThemedView style={styles.container}>
+  return <ThemedView style={styles.container} safe={true}>
     <Spacer/>
     <ThemedText style={styles.title}>Your Reading List</ThemedText>
   </ThemedView>;
@@ -13,7 +13,7 @@ const profile = () => {
 const styles = StyleSheet.create({
     container : {
         flex: 1, 
-        justifyContent: 'center', 
+        // justifyContent: 'center', 
         alignItems: 'center'
     }, 
     title: {
