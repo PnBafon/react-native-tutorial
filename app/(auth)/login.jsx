@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput } from "react-native";
 // themed components
 import ThemedView from "../../components/ThemedView";
 import ThemedLogo from "../../components/ThemedLogo";
@@ -7,11 +7,16 @@ import ThemedText from "../../components/ThemedText";
 import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 import ThemedButton from "../../components/ThemedButton";
-
+import ThemeInput from "../../components/ThemeInput";
+import {useState, useEffect} from "react";  
 const login = () => {
-    const handleSubmit = ()=> {
-        console.log("Submitting form details")
-    }
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+  const handleSubmit = () => {
+    const body = {email, password};
+    console.log("Submitting form details", body);
+  };
   return (
     <ThemedView style={styles.container}>
       <Spacer />
@@ -20,9 +25,27 @@ const login = () => {
         Login to Your Account
       </ThemedText>
 
-    <ThemedButton onPress={handleSubmit}>
+      <ThemeInput
+        style={{ width: "80%", marginBottom: 20 }}
+        placeholder="Email"
+        keyboardType='email-address'
+        value={email}
+        onChangeText={setEmail}
+
+      />
+      <ThemeInput
+        style={{ width: "80%", marginBottom: 20 }}
+        placeholder="Password"
+        keyboardType='password'
+        secureTextEntry={true}
+        value={password}
+        onChangeText={setPassword}
+
+      />
+
+      <ThemedButton onPress={handleSubmit}>
         <Text style={{ color: "#f2f2f2" }}>Login</Text>
-    </ThemedButton>
+      </ThemedButton>
 
       <Spacer height={100} />
       <Link href="/register">
@@ -47,5 +70,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 4,
   },
- 
 });
