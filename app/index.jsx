@@ -14,9 +14,9 @@ const HOME = () => {
       <ThemedView style={styles.container}>
        
        <ThemedLogo />
-        <Spacer/>
+        <Spacer height={20}/>
 
-        <ThemedText style={styles.title} title='true'>
+        <ThemedText style={styles.title} title={true}>
             Hello, Bafon Precious
         </ThemedText>
 
@@ -25,11 +25,11 @@ const HOME = () => {
        <ThemedText>Reading the Book List</ThemedText>
         
        <View style={{flex:'row',}}>
-         <Link href="/about" style={styles.link}>
-          About Page
+         <Link href="/login" style={styles.link}>
+          <ThemedText>Login</ThemedText>
         </Link>
-        <Link href="/contact" style={styles.link}>
-          Contact Page
+        <Link href="/register" style={styles.link}>
+          <ThemedText>Register</ThemedText>
         </Link>
        </View>
       </ThemedView>
@@ -50,16 +50,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 4,
   },
-  img: {
-    marginVertical: 10,
-    width: 80,
-    height: 80,
-  },
+  
     link:{
     marginVertical: 10, 
     fontWeight: "semibold",
-    color: "blue",
    borderBottomWidth: 1,
-   borderColor: 'blue'
+  
   }
 });

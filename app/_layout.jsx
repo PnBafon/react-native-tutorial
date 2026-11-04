@@ -36,7 +36,6 @@ const RootLayout = () => {
           name="contact"
           options={{
             title: "Contact",
-            headerStyle: { backgroundColor: "red" },
           }}
         />
       </Stack>
