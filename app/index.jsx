@@ -12,9 +12,14 @@ const HOME = () => {
         </Text>
         <Text>Reading the List of Books</Text>
         
-        <Link href="/about" style={styles.link}>
+       <View style={{flex:'row',}}>
+         <Link href="/about" style={styles.link}>
           About Page
         </Link>
+        <Link href="/contact" style={styles.link}>
+          Contact Page
+        </Link>
+       </View>
       </View>
     </>
   );
