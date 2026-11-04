@@ -2,10 +2,13 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import Logo from "../assets/android-icon-foreground.png";
 import { Link } from "expo-router";
+
+// themed components
+import ThemedView from "../components/ThemedView";
 const HOME = () => {
   return (
     <>
-      <View style={styles.container}>
+      <ThemedView style={styles.container}>
         <Image source={Logo} style={styles.img} />
         <Text style={[styles.title, { marginBottom: 10 }]}>
           Hello Bafon Precious
@@ -20,7 +23,7 @@ const HOME = () => {
           Contact Page
         </Link>
        </View>
-      </View>
+      </ThemedView>
     </>
   );
 };
