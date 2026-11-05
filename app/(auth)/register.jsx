@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from "react-native";
+import { Keyboard,StyleSheet, Text, TouchableWithoutFeedback } from "react-native";
 // themed components
 import ThemedView from "../../components/ThemedView";
 import ThemedLogo from "../../components/ThemedLogo";
@@ -19,6 +19,7 @@ const Register = () => {
     console.log("Submitting form details", body);
   };
   return (
+    <TouchableWithoutFeedback onPress={ Keyboard.dismiss}>
     <ThemedView style={styles.container}>
       <ThemedText style={styles.title} title={true}>
         Register Your Account
@@ -58,6 +59,7 @@ const Register = () => {
         <ThemedText style={{ textAlign: "center" }}>Login instead</ThemedText>
       </Link>
     </ThemedView>
+    </TouchableWithoutFeedback>
   );
 };
 
