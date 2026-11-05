@@ -16,9 +16,14 @@ import { Colors } from "../../constants/Colors";
 import ThemedButton from "../../components/ThemedButton";
 import ThemeInput from "../../components/ThemeInput";
 import { useState, useEffect } from "react";
+import { useUser } from "../../hooks/useUser";
+
 const login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user } = useUser();
+
+  console.log("Current user:", user);
 
   const handleSubmit = () => {
     const body = { email, password };

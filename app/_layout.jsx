@@ -8,11 +8,12 @@ import {
 import {StatusBar} from 'expo-status-bar'
 import { Stack } from "expo-router";
 import { Colors } from "../constants/Colors";
+import { UserProvider } from "../context/UserContext";
 const RootLayout = () => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
   return (
-    <>
+    <UserProvider>
       <StatusBar value="auto" />
       <Stack
         screenOptions={{
@@ -23,7 +24,7 @@ const RootLayout = () => {
       >
        
       </Stack>
-    </>
+    </UserProvider>
   );
 };
 
