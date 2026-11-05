@@ -8,39 +8,37 @@ import { Link } from "expo-router";
 import { Colors } from "../../constants/Colors";
 import ThemedButton from "../../components/ThemedButton";
 import ThemeInput from "../../components/ThemeInput";
-import {useState, useEffect} from "react";  
+import { useState, useEffect } from "react";
 const login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    const body = {email, password};
+    const body = { email, password };
     console.log("Submitting form details", body);
   };
   return (
     <ThemedView style={styles.container}>
-      <Spacer />
 
       <ThemedText style={styles.title} title={true}>
         Login to Your Account
       </ThemedText>
+      <Spacer />
 
       <ThemeInput
         style={{ width: "80%", marginBottom: 20 }}
         placeholder="Email"
-        keyboardType='email-address'
+        keyboardType="email-address"
         value={email}
         onChangeText={setEmail}
-
       />
       <ThemeInput
         style={{ width: "80%", marginBottom: 20 }}
         placeholder="Password"
-        keyboardType='password'
+        keyboardType="password"
         secureTextEntry={true}
         value={password}
         onChangeText={setPassword}
-
       />
 
       <ThemedButton onPress={handleSubmit}>
