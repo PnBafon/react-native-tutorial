@@ -20,14 +20,19 @@ import { useUser } from "../../hooks/useUser";
 
 const login = () => {
   const [email, setEmail] = useState("");
+  const [error, setEror] = useState(null)
   const [password, setPassword] = useState("");
-  const { user } = useUser();
+  const { user, login } = useUser();
 
   console.log("Current user:", user);
 
-  const handleSubmit = () => {
-    const body = { email, password };
-    console.log("Submitting form details", body);
+  const handleSubmit = async () => {
+    setEror(null);
+    try{
+      await login(email, password);
+    } catch (error){
+      setError(error.message);
+    }
   };
   return (
     <TouchableNativeFeedback onPress={Keyboard.dismiss}>
@@ -36,7 +41,7 @@ const login = () => {
           Login to Your Account
         </ThemedText>
         <Spacer />
-
+        {error && <ThemedText style={styles.error}>{error}</ThemedText>}
         <ThemeInput
           style={{ width: "80%", marginBottom: 20 }}
           placeholder="Email"
@@ -81,4 +86,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 4,
   },
+  error: {
+    color: Colors.warning, 
+    padding: 10, 
+    backgroundColor: '#f5c1c8', 
+    borderColor: Colors.warning,
+    borderWidth: 1, 
+    borderRadius: 6, 
+    marginHorizontal: 10,
+  }
 });
