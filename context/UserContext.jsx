@@ -7,26 +7,31 @@ export const UserContext = createContext();
 export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
 
   async function login(email, password) {
     try {
-      await account.createEmailPasswordSession( email, password);
+      await account.createEmailPasswordSession(email, password);
       const response = await account.get();
       setUser(response);
       setIsAuthenticated(true);
     } catch (error) {
-      console.log(error);
+      throw Error(error.message);
     }
   }
   async function register(email, password) {
     try {
       await account.create(ID.unique(), email, password);
-      await login(email, password)
+      await login(email, password);
     } catch (error) {
-      console.log(error);
+      throw Error(error.message);
     }
   }
-  async function logout() {}
+  async function logout() {
+    await account.deleteSession("current");
+    setUser(null);
+    setIsAuthenticated(true);
+  }
 
   return (
     <UserContext.Provider
